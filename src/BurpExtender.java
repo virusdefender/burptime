@@ -1,17 +1,17 @@
 package burp;
 
 import java.io.PrintWriter;
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class BurpExtender implements IBurpExtender, IProxyListener {
     private PrintWriter stdout;
-    private HashMap<Integer, Long> timeMap = new HashMap<>();
+    private ConcurrentHashMap<Integer, Long> timeMap = new ConcurrentHashMap<>();
     private IBurpExtenderCallbacks callbacks;
 
     @Override
     public void registerExtenderCallbacks(IBurpExtenderCallbacks callbacks) {
         this.callbacks = callbacks;
-        callbacks.setExtensionName("Event listeners");
+        callbacks.setExtensionName("Burp Show Response Time");
         stdout = new PrintWriter(callbacks.getStdout(), true);
         callbacks.registerProxyListener(this);
     }
