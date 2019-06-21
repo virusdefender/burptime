@@ -6,4 +6,4 @@ Show time cost in burp proxy history, it's useful when testing time-based sql in
 
 Similar plugin: [Request Timer](https://portswigger.net/bappstore/56675bcf2a804d3096465b2868ec1d65S)
 
-It's more powerful, but when there is a lot of request/response data, it has some performance issues.
+It's more powerful, but when there is a lot of request/response data, it may has some performance issues.
